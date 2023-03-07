@@ -173,5 +173,8 @@ import as {...} = require(...)
 ### Alternative from Manifest is HTML webpack plugin
 [HTML Webpack Plugin v.4](https://www.npmjs.com/package/html-webpack-plugin/v/4.5.2) 
 
+# Resolving Folders
+How to replace their path by aliases  and resolve modules from them 
+
 
 

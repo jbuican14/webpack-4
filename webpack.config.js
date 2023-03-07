@@ -67,7 +67,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8192,
-              name: './build/assets/images/[name].[hash:7].[ext]'
+              name: './assets/images/[name].[hash:7].[ext]'
             }
           },
           {loader: 'image-webpack-loader'},
@@ -85,5 +85,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name]-[contenthash].css'
     })
-  ]
+  ],
+  resolve: {
+    alias: {
+      CssFolder: path.resolve(__dirname, 'src/assets/css')
+    }
+  }
 }
