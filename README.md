@@ -170,5 +170,8 @@ npm i webpack-manifest-plugin@4.0.0
 <br />
 import as {...} = require(...)
 
+### Alternative from Manifest is HTML webpack plugin
+[HTML Webpack Plugin v.4](https://www.npmjs.com/package/html-webpack-plugin/v/4.5.2) 
+
 
 
