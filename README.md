@@ -165,5 +165,10 @@ We clean up build by installing clean-webpack-plugin
 The other thing is to automate the file in index.html using manifest plugin
 <br >
 
-### Manifest Plugin
+### Manifest Plugin 
+npm i webpack-manifest-plugin@4.0.0 
+<br />
+import as {...} = require(...)
+
+
 
