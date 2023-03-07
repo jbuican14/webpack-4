@@ -7,9 +7,12 @@ module.exports = {
   watch: true,
   mode: "development",
   devtool: "cheap-module-eval-source-map",
-  entry: "./src/index.js",
+  entry: {
+    application: "./src/index.js",
+    admin: "./src/admin/index.js"
+  },
   output: {
-    filename: "../build/application.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, 'build')
   },
   optimization: {
@@ -31,14 +34,16 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [
-          // 'style-loader',
           MiniCssExtractPlugin.loader,
           "css-loader",
           // { loader: "style-loader", options: { injectType: "styleTag" } },
           // { loader: "css-loader", options: { importLoaders: 1 } },
-          // "css-loader",
           { loader: "postcss-loader", 
           options: {
             plugins: [
@@ -48,6 +53,7 @@ module.exports = {
             ]
            }},
           // "postcss-loader",
+        
           "sass-loader"
         ],
       },
@@ -68,7 +74,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'application.css'
+      filename: '[name].css'
     })
   ]
 }
