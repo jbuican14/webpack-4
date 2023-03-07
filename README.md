@@ -129,3 +129,30 @@ NOTE: * if you don't want to turn img to inline base64 images, use directly url-
 ## Compressing Images
 using image-webpack-loader v.6 (if error try <code> brew install libpng </code>) 
 <br />
+
+# Cache 
+### Output Files Naming 
+<br/>
+
+webpack allows more than 1 entry using object notation which will be output file names 
+<br>
+*we MUST update ourput from filename: "application.js" to filename: "[name].js" 
+<br />
+
+For css, we have "MiniCssExtractPlugin" that calls 
+<br/>
+
+<code>
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "application.css"
+    })
+  ]
+</code>
+
+<br />
+the bundling to multiple chunks will fail on css so we need to replace filename: "application.css" to filename: "[name].css"
+
+<br />
+
+
