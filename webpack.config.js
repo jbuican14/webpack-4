@@ -7,11 +7,11 @@ const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  watch: true,
+  // watch: true,
   mode: "development",
   devtool: "cheap-module-eval-source-map",
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    // contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000
   },
@@ -20,7 +20,7 @@ module.exports = {
     admin: "./src/admin/index.js"
   },
   output: {
-    filename: "[name]-[contenthash].js",
+    filename: "[name]-[hash].js",
     path: path.resolve(__dirname, 'build')
   },
   optimization: {
@@ -88,7 +88,7 @@ module.exports = {
     new WebpackManifestPlugin(),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name]-[contenthash].css'
+      filename: '[name]-[hash].css'
     })
   ],
   resolve: {
