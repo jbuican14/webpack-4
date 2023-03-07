@@ -176,5 +176,29 @@ import as {...} = require(...)
 # Resolving Folders
 How to replace their path by aliases  and resolve modules from them 
 
+in path module, you can load something before get anything from you modules by 
 
+resolve {
+  alias: {
+    ...
+  },
+  modules: [path.resolve(__dirname, 'src/custom_download_libs'), 'node_modules'] 
+}
+// look in custom_download_libs then node_modules
+// Not favorable here
+<br/> The downside of using this is the chance to pewer your package manager npm or yarn 
+
+# Webpack Dev Server and HMR (Hot Module Replacement)
+- This reduce compilation, it gives an HTTP URL to access HTML page(s) not from file protocol 
+// explain ::: <br/>
+[contentBase] --> specify which folders used to rerve the static content
+<code>
+devServer: {
+    port: 9000,
+    contentBase: path.resolve(__dirname, 'build')
+  },
+</code>
+
+Now we can set script for start with 'webpack-dev-server' 
+installing npm install --save-dev webpack-cli to help wiht script 'webpack serve'
 

@@ -10,6 +10,11 @@ module.exports = {
   watch: true,
   mode: "development",
   devtool: "cheap-module-eval-source-map",
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000
+  },
   entry: {
     application: "./src/index.js",
     admin: "./src/admin/index.js"
@@ -89,6 +94,7 @@ module.exports = {
   resolve: {
     alias: {
       CssFolder: path.resolve(__dirname, 'src/assets/css')
-    }
+    },
+    modules: ["node_modules"],
   }
 }
