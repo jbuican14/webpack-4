@@ -155,4 +155,15 @@ the bundling to multiple chunks will fail on css so we need to replace filename:
 
 <br />
 
+### Hash Content 
+Adding 3 options here (file name versioning, file path versioning, or query string versioning). first option and using [name]-[contenthash].js to output and plugins config file 
+<br />
+
+We clean up build by installing clean-webpack-plugin 
+<br />
+
+The other thing is to automate the file in index.html using manifest plugin
+<br >
+
+### Manifest Plugin
 
