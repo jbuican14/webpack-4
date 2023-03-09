@@ -201,4 +201,9 @@ devServer: {
 
 Now we can set script for start with 'webpack-dev-server' 
 installing npm install --save-dev webpack-cli to help wiht script 'webpack serve'
+any code update, will get reload automatically
+( issue : this refresh can refresh a whlole page) <br />
+( solution: use Hot Module Replacement INSTEAD) <br />
+
+### Let's talk a bit about publicPath option 
 
