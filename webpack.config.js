@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
+// currently clean webpack doesn't work 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -16,8 +17,8 @@ module.exports = {
     port: 9000
   },
   entry: {
-    application: "./src/index.js",
-    admin: "./src/admin/index.js"
+    application_juti: "./src/client/index.js",
+    admi_juti: "./src/admin/index.js"
   },
   output: {
     filename: "[name]-[hash].js",
@@ -81,19 +82,19 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "My Application",
       template:"./src/temp.html",
     }),
     new WebpackManifestPlugin(),
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name]-[hash].css'
     })
   ],
   resolve: {
     alias: {
-      CssFolder: path.resolve(__dirname, 'src/assets/css')
+      css: path.resolve(__dirname, 'src/assets/css')
     },
     modules: ["node_modules"],
   }

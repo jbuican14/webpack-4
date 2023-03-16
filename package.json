@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server"
+    "build": "rm -rf ./build && webpack",
+    "start": "webpack-dev-server",
+    "clean:dist": "rm -rf ./build"
   },
   "keywords": [],
   "author": "",
