@@ -206,4 +206,9 @@ any code update, will get reload automatically
 ( solution: use Hot Module Replacement INSTEAD) <br />
 
 ### Let's talk a bit about publicPath option 
+the publicPath didn't work with webpack earlier version so uninstall and reinstall version lower in order to use this feature <br/>
+Cannot find module 'webpack-cli/bin/config-yargs' is the issue found that because the script is no longer the webpack-dev-server but just 'webpack serve' 
+<br/> Google around what works helps because there are so many version of it 
+<br/>
+This will display ![webpack now serve under folder juti](./src/assets/images/webpack-dev-server-v-3.png)
 

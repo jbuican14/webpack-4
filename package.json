@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf ./build && webpack",
-    "start": "webpack-dev-server",
+    "start": "webpack serve",
     "clean:dist": "rm -rf ./build"
   },
   "keywords": [],
@@ -29,7 +29,7 @@
     "style-loader": "^2.0.0",
     "webpack": "^4.25.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.1",
+    "webpack-dev-server": "^3.11.3",
     "webpack-manifest-plugin": "^4.0.0"
   },
   "dependencies": {
