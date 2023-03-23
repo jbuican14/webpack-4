@@ -6,23 +6,25 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const mode = "development";
 
 module.exports = {
   // watch: true,
-  mode: "development",
+  mode: mode,
   devtool: "cheap-module-eval-source-map",
   devServer: {
     // contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000,
-   publicPath: '/juti/'
+   publicPath: '/juti/',
+   hot: true
   },
   entry: {
     application_juti: "./src/client/index.js",
     admi_juti: "./src/admin/index.js"
   },
   output: {
-    filename: "[name]-[hash].js",
+    filename: mode === "production" ? "[name]-[contenthash].js" : "[name].js",
     path: path.resolve(__dirname, 'build')
   },
   optimization: {
